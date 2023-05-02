@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idopontfoglalas</title>
+    <link rel="icon" type="image/x-icon" href="/IMG/favicon.ico">
+    <link rel="stylesheet" href="/mdb/css/mdb.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar">
+    <img src="/IMG/logo.png" width="100px" height="100px" align="left">
+    <a href="#default" id="logo">AnRoTa Bútorda</a>
+    <div id="navbar-right">
+      <a class="active" href="index.html">Kezdő oldal</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+      <a href="tervezo.html">Tervező</a>
+      <a href="szolgaltatasok.html">Szolgáltatásaink</a>
+      <a href="idopontfoglalo.html">Időpontfoglaló</a>
+      <a href="doityourself.html">DIY</a>
+      <a href="reg.html">Regisztráció</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  <table align="center">
+    <tr>
+      <th><label for="name">Teljes név:</label></th>
+      <th><label for="email">Email cim:</label></th>
+      <th><label for="date">Kivánt dátum:</label></th>
+      <th><label for="time">Kivánt idő:</label></th>
+      <th><label for="location">A szerelési helyszin:</label></th>
+      <th></th>
+
+      
+    </tr>
+    <tr>
+      <td> <input type="text" id="name" name="name" required></td>
+      <td> <input type="email" id="email" name="email" required></td>
+      <td> <input type="date" id="date" name="date" required></td>
+      <td> <input type="time" id="time" name="time" required></td>
+      <td> <input type="text" id="location" name="location" required></td>
+      
+    </tr>
+    <tr>
+      <td colspan="5" class="text-center"><input type="submit" value="Foglalás kérése"> <div id="map"></div> </td>
+    </tr>
+    
+  </table>
+   
+      
+      <br>
+      <br>
+      
+      <script>
+        function initMap()
+         {
+            const map = new google.maps.Map(document.getElementById("map"),
+             {
+               center: { lat: -34.397, lng: 150.644 },
+                zoom: 8,
+             });
+  
+            const marker = new google.maps.Marker
+              (
+              {
+                position: { lat: -34.397, lng: 150.644 },
+                map: map,
+              }
+              );
+          }
+
+        const form = document.querySelector('form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const dateInput = document.getElementById('date');
+        const timeInput = document.getElementById('time');
+        const locationInput = document.getElementById('location');
+
+        form.addEventListener('submit'), (e) => {
+          e.preventDefault()};
+          
+        // Send form data to server or store it in a database
+        console.log(`Name: ${nameInput.value}`);
+        console.log(`Email: ${emailInput.value}`);
+        console.log(`Date: ${dateInput.value}`);
+        console.log(`Time: ${timeInput.value}`);
+        console.log(`Location: ${locationInput.value}`);
+        
+        // Send confirmation email
+        const emailBody = 'Thank you for booking an appointment with us!' ;
+          'Here are your appointment';
+
+      </script>
+      <div>
+        <h2 align="center">
+          <p>
+            Üdvözlöm az oldalunkon! 
+          </p>
+          <p>
+            Ön megálmodja mi legyártjuk! Kérésére kiszállítjuk és összeállítjuk az ön által lefoglat időpontban.
+          </p>
+          <br>
+          <br>
+    
+        </h2>
+        
+    
+        <footer>
+          <p><a href="mailto:hello@anrota.hu">hello@anrota.hu</a><br>
+            <br>
+          Anróta Kft. 2023. All rights reserved.</p>
+        </footer>
+</body>
+</html>
